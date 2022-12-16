@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://suyxwj6oolev"]
+
+[node name="HomePage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="HSplitContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "会话"
+
+[node name="Button" type="Button" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "新的会话"
+
+[node name="Panel" type="Panel" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 180.0
+offset_bottom = 550.0
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "设置服务器"
+
+[node name="Button2" type="Button" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "设置公钥"
+
+[node name="Panel2" type="Panel" parent="HSplitContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="HSplitContainer/Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer/Panel2/MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "聊天记录"
+
+[node name="Button" type="Button" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "清除聊天记录"
+
+[node name="Panel" type="Panel" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 0
+offset_top = 4.0
+offset_right = 920.0
+offset_bottom = 364.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="MarginContainer2" type="MarginContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Button2" type="Button" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "发送图片"
+
+[node name="Button" type="Button" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer2/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "发送文件"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="TextEdit" type="TextEdit" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(0, 36)
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "输入消息内容"
+
+[node name="Button" type="Button" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "发送"
