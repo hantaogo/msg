@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://suyxwj6oolev"]
+[gd_scene load_steps=5 format=3 uid="uid://suyxwj6oolev"]
+
+[ext_resource type="Script" path="res://HomePage/HomePage.gd" id="1_hbmfb"]
+[ext_resource type="PackedScene" uid="uid://cndpyp3p5ocq0" path="res://ServerSetting/ServerSetting.tscn" id="1_qoyxk"]
+[ext_resource type="PackedScene" uid="uid://co31x3r6tum5r" path="res://SecretSetting/SecretSetting.tscn" id="3_jn7ws"]
+[ext_resource type="PackedScene" uid="uid://dhib8lm82aquc" path="res://NewSession/NewSession.tscn" id="4_ycqqa"]
 
 [node name="HomePage" type="Control"]
 layout_mode = 3
@@ -7,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_hbmfb")
 
 [node name="HSplitContainer" type="HSplitContainer" parent="."]
 layout_mode = 1
@@ -43,7 +49,7 @@ layout_mode = 2
 layout_mode = 2
 text = "会话"
 
-[node name="Button" type="Button" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+[node name="btnNewSession" type="Button" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "新的会话"
@@ -68,12 +74,12 @@ theme_override_constants/separation = 10
 [node name="Button" type="Button" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "设置服务器"
+text = "服务器设置"
 
 [node name="Button2" type="Button" parent="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "设置公钥"
+text = "密钥设置"
 
 [node name="Panel2" type="Panel" parent="HSplitContainer"]
 custom_minimum_size = Vector2(300, 0)
@@ -109,7 +115,7 @@ layout_mode = 2
 layout_mode = 2
 text = "聊天记录"
 
-[node name="Button" type="Button" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="btnClearHistory" type="Button" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 text = "清除聊天记录"
@@ -120,10 +126,12 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer/Panel"]
-layout_mode = 0
-offset_top = 4.0
-offset_right = 920.0
-offset_bottom = 364.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/Panel2/MarginContainer2/VSplitContainer/MarginContainer/VBoxContainer/Panel/ScrollContainer"]
@@ -165,3 +173,19 @@ placeholder_text = "输入消息内容"
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 text = "发送"
+
+[node name="serverSetting" parent="." instance=ExtResource("1_qoyxk")]
+unique_name_in_owner = true
+visible = false
+
+[node name="secretSetting" parent="." instance=ExtResource("3_jn7ws")]
+unique_name_in_owner = true
+visible = false
+
+[node name="newSession" parent="." instance=ExtResource("4_ycqqa")]
+unique_name_in_owner = true
+visible = false
+
+[connection signal="pressed" from="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer2/btnNewSession" to="." method="_on_btn_new_session_pressed"]
+[connection signal="pressed" from="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HSplitContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Button2" to="." method="_on_button_2_pressed"]
